@@ -1,0 +1,45 @@
+.lm-ui-input {
+  align-items: stretch;
+  cursor: text;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  position: relative;
+  padding: .5em;
+
+  &__input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+
+  &__icon-container {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    margin-right: .5em;
+  }
+
+  &__tooltip-container {
+    position: absolute;
+    right: .5em;
+    top: 0;
+    bottom: 0;
+    display: flex;
+  }
+
+  &__error-tooltip-icon {
+    align-self: center;
+    color: red;
+  }
+
+  &_invalid {
+    border-color: red;
+  }
+
+  &_focused {
+    border-color: initial;
+  }
+}

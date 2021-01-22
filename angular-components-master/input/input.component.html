@@ -1,0 +1,37 @@
+<div
+  [class.lm-ui-input_focused]="focused"
+  [class.lm-ui-input_invalid]="invalid"
+  (mousedown)="onHostElementMouseDown($event)"
+  (dblclick)="onHostElementDoubleClick($event)"
+  class="lm-ui-input"
+>
+<div
+  *ngIf="iconType"
+  class="lm-ui-input__icon-container">
+  <i
+    [class.icon-search]="checkIcon('search')"
+    class="lm-ui-input__icon icon"
+  ></i>
+</div>
+  <input
+    #input
+    [placeholder]="placeholder"
+    [class.lm-ui-input__input_focused]="focused"
+    (blur)="onInputElementBlur($event)"
+    (focus)="onInputElementFocus($event)"
+    (input)="onInputElementInput($event)"
+    (mousedown)="onInputElementMouseDown($event)"
+    class="lm-ui-input__input"
+    type="text" 
+    [attr.data-autotest]="dataAutotest" />
+
+    <div class="lm-ui-input__tooltip-container">
+      <i
+        *ngIf="error.length"
+        [tooltip]="error"
+        [placement]="'left'"
+        [container]="'body'"
+        class="lm-ui-input__error-tooltip-icon fa fa-exclamation"
+      ></i>
+    </div>
+</div>
